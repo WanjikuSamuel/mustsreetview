@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Panorama Viewer</title>
+    <!-- Include Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        #panorama {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Panorama container -->
+    <div id="panorama"></div>
+
+    <!-- Include Pannellum JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "kejani",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true
+            },
+            
+            "scenes": {
+                "kejani": {
+                    "title": "Kejani", // Title for the Kejani scene
+                    "type": "equirectangular",
+                    "panorama": "https://i.postimg.cc/GpTyMFYW/njoro.jpg",
+                    "hfov": 100,
+                    "pitch": 0, 
+                    "yaw": 0,
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": 0, 
+                            "type": "info", 
+                            "text": "this is my humble abode" 
+                        },
+                        {
+                            "pitch": 10, 
+                            "yaw": 60,
+                            "type": "scene", 
+                            "text": "Go Outside", 
+                            "sceneId": "nje"
+                        }
+                    ]
+                },
+
+                "nje": {
+                    "title": "Nje", 
+                    "type": "equirectangular", 
+                    "panorama": "https://i.postimg.cc/xdBbHqX0/nje.jpg", 
+                    "hfov": 100, 
+                    "pitch": 0,
+                    "yaw": 0, 
+                    "hotSpots": [
+                        {
+                            "pitch": 0, 
+                            "yaw": 10, 
+                            "type": "info", 
+                            "text": "neighbour wa chini" 
+                        },
+                        {
+                            "pitch": 10, 
+                            "yaw": -55, 
+                            "type": "info", 
+                            "text": "neighbour wa side derroh" 
+                        },
+                        {
+                            "pitch": 10, 
+                            "yaw": -20, 
+                            "type": "scene", 
+                            "text": "Go Inside kejani", 
+                            "sceneId": "kejani" 
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

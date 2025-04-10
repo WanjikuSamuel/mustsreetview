@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Panorama Viewer</title>
+    <!-- Include Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        #panorama {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Panorama container -->
+    <div id="panorama"></div>
+
+    <!-- Include Pannellum JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "topleft",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true
+            },
+            
+            "scenes": {
+                "topleft": {
+                    "title": "topleft", // Title for the Kejani scene
+                    "type": "equirectangular",
+                    "panorama": "https://i.postimg.cc/8Px6pLGq/08-04-2025-01-42-01.jpg",
+                    "hfov": 100,
+                    "pitch": 0, 
+                    "yaw": 0,
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": -15, 
+                            "type": "info", 
+                            "text": "GREEN DOOR" 
+                        },
+                        {
+                            "pitch": 0, 
+                            "yaw": 5,
+                            "type": "scene", 
+                            "text": "Go foward", 
+                            "sceneId": "codsbe"
+                        }
+                    ]
+                },
+
+                "codsbe": {
+                    "title": "codsbe", 
+                    "type": "equirectangular", 
+                    "panorama": "https://i.postimg.cc/g29xFdqp/08-04-2025-01-42-40.jpg", 
+                    "hfov": 100, 
+                    "pitch": 0,
+                    "yaw": 0, 
+                    "hotSpots": [
+                        {
+                            "pitch": 0, 
+                            "yaw": -10, 
+                            "type": "info", 
+                            "text": "COD SCHOOL OF BUSINESS AND ECONOMICS AA18" 
+                        },
+                        {
+                            "pitch": 0, 
+                            "yaw": 10, 
+                            "type": "info", 
+                            "text": "MULTIMEDIA COMP LAB AA19" 
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Panorama Viewer</title>
+    <!-- Include Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        #panorama {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Panorama container -->
+    <div id="panorama"></div>
+
+    <!-- Include Pannellum JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "left",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true
+            },
+            
+            "scenes": {
+                "left": {
+                    "title": "left", // Title for the Kejani scene
+                    "type": "equirectangular",
+                    "panorama": "https://i.postimg.cc/jSYXSpQ6/08-04-2025-01-35-10.jpg",
+                    "hfov": 100,
+                    "pitch": 0, 
+                    "yaw": 0,
+                    "hotSpots": [
+                        {
+                            "pitch": 0,
+                            "yaw": -27, 
+                            "type": "info", 
+                            "text": "CLEANERS STORE AA07" 
+                        },
+                        {
+                            "pitch": 5,
+                            "yaw": 5, 
+                            "type": "info", 
+                            "text": "SPORTS OFFICE AA09" 
+                        },{
+                            "pitch": -3, 
+                            "yaw": 20, 
+                            "type": "scene", 
+                            "text": "Go foward", 
+                            "sceneId": "opendistance" 
+                        }
+                    ]
+                },
+
+                "opendistance": {
+                    "title": "Open distance", 
+                    "type": "equirectangular", 
+                    "panorama": "https://i.postimg.cc/W19wwdc8/08-04-2025-01-36-10.jpg", 
+                    "hfov": 100, 
+                    "pitch": 0,
+                    "yaw": 0, 
+                    "hotSpots": [
+                        {
+                            "pitch": 0, 
+                            "yaw": -10, 
+                            "type": "info", 
+                            "text": "OPEN DISTANCE E-LEARNING AA09" 
+                        },
+                        {
+                            "pitch": 0, 
+                            "yaw":10 , 
+                            "type": "info", 
+                            "text": "FOOD SCIENCE STAFF AA010" 
+                        },
+                        {
+                            "pitch": 5, 
+                            "yaw": 20,
+                            "type": "info", 
+                            "text": "securityofficer" 
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+</html>

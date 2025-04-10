@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360° Panorama Viewer</title>
+    <!-- Include Pannellum CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <style>
+        #panorama {
+            width: 100%;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <!-- Panorama container -->
+    <div id="panorama"></div>
+
+    <!-- Include Pannellum JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+        pannellum.viewer('panorama', {
+            "default": {
+                "firstScene": "topright",
+                "sceneFadeDuration": 1000,
+                "autoLoad": true
+            },
+            
+            "scenes": {
+                "topright": {
+                    "title": "topright", // Title for the Kejani scene
+                    "type": "equirectangular",
+                    "panorama": "https://i.postimg.cc/j5vft9qX/08-04-2025-01-39-49.jpg",
+                    "hfov": 100,
+                    "pitch": 0, 
+                    "yaw": 0,
+                    "hotSpots": [
+                        {
+                            "pitch": 3,
+                            "yaw": 3, 
+                            "type": "info", 
+                            "text": "COMP LAB 3 AA13" 
+                        },
+                        {
+                            "pitch": 0, 
+                            "yaw": -5,
+                            "type": "scene", 
+                            "text": "Go foward", 
+                            "sceneId": "deansci"
+                        }
+                    ]
+                },
+
+                "deansci": {
+                    "title": "deansci", 
+                    "type": "equirectangular", 
+                    "panorama": "https://i.postimg.cc/wMGssmmR/08-04-2025-01-40-45.jpg", 
+                    "hfov": 100, 
+                    "pitch": 0,
+                    "yaw": 0, 
+                    "hotSpots": [
+                        {
+                            "pitch": 0, 
+                            "yaw": 15, 
+                            "type": "info", 
+                            "text": "DEAN SCHOOL SCI AA12" 
+                        },
+                        {
+                            "pitch": 10, 
+                            "yaw": -5, 
+                            "type": "info", 
+                            "text": "DEAN OF STUDENTS AA11" 
+                        }
+                    ]
+                }
+            }
+        });
+    </script>
+</body>
+</html>
